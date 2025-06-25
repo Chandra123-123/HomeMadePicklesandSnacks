@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Place an Order - Homemade Pickles & Snacks</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fffce6; margin: 0; padding: 0; }
+    header, footer { background-color: #8B4513; color: white; text-align: center; padding: 1rem; }
+    nav { background-color: #f2e0b2; padding: 0.5rem; text-align: center; }
+    nav a { margin: 0 15px; text-decoration: none; color: #4d2600; font-weight: bold; }
+    .order-container {
+      max-width: 600px; margin: 3rem auto; background-color: #fff7cc;
+      padding: 2rem; border-radius: 10px; box-shadow: 2px 2px 10px #ccc;
+    }
+    h2 { text-align: center; color: #4d2600; }
+    label { display: block; margin-top: 1rem; font-weight: bold; color: #333; }
+    input, select {
+      width: 100%; padding: 0.6rem; margin-top: 0.3rem;
+      border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;
+    }
+    button {
+      background-color: #8B4513; color: white; border: none; width: 100%;
+      padding: 0.8rem; margin-top: 1.5rem; font-size: 1rem; border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #5c3317; }
+    .success-message { background-color: #d4edda; color: #155724; padding: 1rem; border-radius: 5px; margin: 1rem 0; display: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Homemade Pickles & Snacks</h1>
+  </header>
+
+  <nav>
+    <a href="/home">Home</a>
+    <a href="/veg_pickles">Veg Pickles</a>
+    <a href="/non_veg_pickles">Non-Veg Pickles</a>
+    <a href="/snackes">Snacks</a>
+    <a href="/cart">Cart</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <div class="order-container">
+    <h2>Place Your Order</h2>
+    <form action="/order" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" required />
+
+      <label for="address">Delivery Address</label>
+      <input type="text" name="address" id="address" required />
+
+      <label for="city">City</label>
+      <input type="text" name="city" id="city" required />
+
+      <label for="pincode">PIN Code</label>
+      <input type="text" name="pincode" id="pincode" pattern="[0-9]{6}" required />
+
+      <label for="item">Select Product</label>
+      <select name="item" id="item" required>
+        <option value="">-- Choose an item --</option>
+        <option value="Andhra Mango Pickle">Andhra Mango Pickle</option>
+        <option value="Gongura Pickle">Gongura Pickle</option>
+        <option value="Lemon Pickle">Lemon Pickle</option>
+        <option value="Garlic Pickle">Garlic Pickle</option>
+        <option value="Chilli Pickle">Chilli Pickle</option>
+        <option value="Masala Murukulu">Masala Murukulu</option>
+        <option value="Karam Boondi">Karam Boondi</option>
+        <option value="Mixture">Mixture</option>
+        <option value="Chekkalu">Chekkalu</option>
+        <option value="Kakinada Kaja">Kakinada Kaja</option>
+        <option value="Chicken Pickle">Chicken Pickle</option>
+        <option value="Mutton Pickle">Mutton Pickle</option>
+        <option value="Prawn Pickle">Prawn Pickle</option>
+        <option value="Korameenu Pickle">Korameenu Pickle</option>
+      </select>
+
+      <label for="quantity">Quantity</label>
+      <input type="number" name="quantity" id="quantity" min="1" max="50" required />
+
+      <label for="notes">Special Instructions (Optional)</label>
+      <input type="text" name="notes" id="notes" placeholder="Any special requests or delivery instructions" />
+      <button type="submit">Submit Order</button>
+    </form>
+    <div class="success-message" id="successMessage">
+      <strong>Your order is successful!</strong> Redirecting...
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Homemade Pickles & Snacks. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+      setTimeout(() => window.location.href = '/Sucess', 2000);
+    });
+  </script>
+
+</body>
+</html>
