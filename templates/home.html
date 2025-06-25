@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Homemade Pickles & Snacks</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #7fe965; }
+    header { background-color: #8B4513; color: rgb(254, 250, 250); padding: 1rem; text-align: center; }
+    nav { background-color: #f2e0b2; padding: 0.5rem; text-align: center; }
+    nav a { margin: 0 15px; text-decoration: none; color: #4d2600; font-weight: bold; }
+    section { padding: 2rem; }
+    .product-preview { display: flex; justify-content: space-around; flex-wrap: wrap; }
+    .product-box { background-color: #fff7cc; border-radius: 10px; padding: 1rem; margin: 1rem; width: 250px; box-shadow: 2px 2px 10px #ccc; text-align: center; }
+    footer { background-color: #8B4513; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    .hero {
+  background-image: url('banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45); /* optional dark overlay for text contrast */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  background-color: #8B4513;
+  color: #fdfdfd;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero-btn:hover {
+  background-color: #a0522d;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Chandra Homemade Pickles & Snacks</h1>
+    <img src="{{ url_for('static', filename='images/chandra.jpg') }}" alt="Chandra">
+    <p>Authentic tastes from our kitchen to yours!</p>
+  </header>
+
+  <nav>
+    <a href="/about">About</a>
+    <a href="/veg_pickles">Veg Pickles</a>
+    <a href="/non_veg_pickles">Non-Veg Pickles</a>
+    <a href="/snackes">Snacks</a>
+    <a href="/contact">Contact</a>
+    <a href="/cart">Cart</a>
+    <a href="/login">Login</a>
+    <a href="/order">order</a>
+  </nav>
+
+  <section>
+    <h2>Featured Products</h2>
+    <div class="product-preview">
+      <div class="product-box">
+        <h3>VEG_PICKLES</h3>
+        <img src="{{ url_for('static', filename='images/h.jpg') }}" alt="Veg_ Pickle">
+        <p>Spicy and tangy chunks packed with tradition.</p>
+      </div>
+      <div class="product-box">
+        <h3>NON_VEG_PICKLES</h3>
+        <img src="{{ url_for('static', filename='images/nonveg.jpg') }}" alt="Non_Veg_Pickle">
+        <p>Rich flavorful,fully loaded with masalas spices and fiery—perfect with rice or roti.</p>
+      </div>
+      <div class="product-box">
+        <h3>SNACKS</h3>
+        <img src="{{ url_for('static', filename='images/snacks1.jpg') }}" alt="Snacks1">
+        <p>Crunchy South Indian snack & juicy and delicious Sweets & seasoned to perfection.</p>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+  <div class="hero-text">
+    <h2>Freshly  Home Made, Traditionally Loved</h2>
+    <img src="{{ url_for('static', filename='images/p1.jpg') }}" alt="prabhas">
+    <p>Get up to 20% off on your first order!</p>
+    <a href="/order" class="hero-btn">Shop Now</a>
+  </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Homemade Pickles & Snacks. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
